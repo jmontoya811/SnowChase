@@ -1,11 +1,18 @@
-<h1><%= @resort.name %></h1>
-<p><%= @today %></p>
-<br>
+        <h1><%= @resort.name %></h1>
 
-
-<p><%= @last_snowcast %></p>
-
-<br>
-
-<p><%= @tom.first %></p>
-<p><%= @tom.last %></p>
+    <div class="jumbotron">
+        <div class="cardbody">
+         <p>  Current Weather: <%= @today %><br>
+       Tickets: $ <%= @resort.ticket_price %><br>
+        <%= @resort.location %>
+                  <br>  <%= @resort.status %><br>
+                    Snow Base: <%= @resort.base %></p>
+        </div>
+    </div>
+        
+ <br>
+<div class="card card-primary">
+        <p><%= @last_snowcast %></p>
+        <p><%= @tom.first %></p>
+        <p><%= @tom.last %></p>
+ </div>

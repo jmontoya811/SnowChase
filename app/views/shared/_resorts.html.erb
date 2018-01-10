@@ -1,10 +1,10 @@
-<%# ski_resorts = ['Alta', 'Brighton', 'Solitude', 'Park City', 'Deer Valley', 'Powder Mountain', 'Snow Basin', 'Sundance', 'Beaver Mountain', 'Snowbird']  %>
-
-
-     <div class="container">
-        <div class="card">
-            
-            <%= @resorts.each do |resort| %>
+           <% @resorts.each do |resort| %>
+                <div class="home-card">
+                    <h2><%= link_to resort.name, resort_path(resort) %></h2>
+                    <%= resort.location %>
+                    <%= resort.status %><br>
+                    <p>Snow Base: <%= resort.base %></p>
+                </div>
             <% end %>
-         </div>
-     </div>
+         
+     

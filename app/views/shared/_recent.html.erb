@@ -1,20 +1,22 @@
      <% cities = %w[cityId:331216, cityId:53286, cityId:332154, cityId:2291594, cityId:341178, cityId:53264, cityId:166644, cityId:43095] %>  
+  
+  <div class="jumbotron">
+   <h3>Recent Weather Updates</h3>
    <div class="container">
-        <div class="card">
-            <p>Salt Lake City recent snowfall</p>
-<p><%= @last_forecast.date %></p>
-<p><%= @last_snowcast %></p>
+        
+            <% cities.each do |city| %>
+        <div class="weather-card">
 
-<p>Vancouver recent snowfall</p>
+            
+            <% @today = Accuweather.get_conditions(location_id:"#{city}").local %>
 
-<p><%= @snowfall.date %></p>
-<p><%= @vsnowfall %></p>
-        </div>
-     </div>
-   <div class="container">
-        <div class="card">
-            <%= cities.each do |city| %>
+<p><%= @today.city %>
+, <%= @today.state %></p>
+
             <%= Accuweather.get_conditions(location_id:"#{city}").current %>
+            
+        </div><br>
             <% end %>
-        </div>
+        
+     </div>
      </div>

@@ -2,9 +2,15 @@
 
 <% @resorts.each do |resort| %>
     <div class="resort">
+    <div class="card">
     <h2><%= link_to resort.name, resort_path(resort) %></h2>
-    <p><%= resort.snowfall %></p>
+            <p> $ <%= resort.ticket_price %></p>
+    <p>Recent Snowfall: <%= resort.snowfall %></p>
+    <% @weather = Accuweather.get_conditions(location_id: "cityId:#{resort.city_id}").forecast %>
+    <% @snowcast = @weather.map(&:daytime).map(&:snow_amount) %>
+    <p><%= @snowcast %></p>
+        </div>
         </div>
 <% end %>
 <hr>
-<%= link_to "Home", root_path %>
+<%= link_to "Home", root_path %>        
