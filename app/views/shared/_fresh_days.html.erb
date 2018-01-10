@@ -5,3 +5,16 @@
 <!-- @id="cityId:166644", @city="Tignes" -->
 <!-- @id="cityId:43095", @city="Bansko" -->
 
+
+<%# <%= Accuweather.city_search(name: 'Brighton') %> 
+
+           <%= Accuweather.get_conditions(location_id: "cityId:2197584").current %> 
+           <%= Accuweather.get_conditions(location_id: "cityId:2197584").forecast %> 
+<%# @weather_forecast = Accuweather.get_conditions(location_id: 'cityId:331216').forecast
+    @snowforecast = Accuweather.get_conditions(location_id: 'cityId:53286').forecast
+
+    @last_forecast = @weather_forecast.last
+    @vsnowfall = @snowforecast.map(&:daytime).map(&:snow_amount)
+
+    @snowfall = @snowforecast.last
+    @last_snowcast = @weather_forecast.map(&:daytime).map(&:snow_amount) %>
