@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @snowfall.title %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @snowfall.location %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @snowfall.amount %>
+</p>
+
+<p>
+  <strong>Temp:</strong>
+  <%= @snowfall.temp %>
+</p>
+
+<%= link_to 'Edit', edit_snowfall_path(@snowfall) %> |
+<%= link_to 'Back', snowfalls_path %>

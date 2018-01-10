@@ -1,0 +1,10 @@
+<h1>Resorts Home</h1>
+
+<% @resorts.each do |resort| %>
+    <div class="resort">
+    <h2><%= link_to resort.name, resort_path(resort) %></h2>
+    <p><%= resort.snowfall %></p>
+        </div>
+<% end %>
+<hr>
+<p><%= link_to "Home", root_path %></p>

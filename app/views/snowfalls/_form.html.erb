@@ -1,0 +1,37 @@
+<%= form_with(model: snowfall, local: true) do |form| %>
+  <% if snowfall.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(snowfall.errors.count, "error") %> prohibited this snowfall from being saved:</h2>
+
+      <ul>
+      <% snowfall.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :snowfall_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :snowfall_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount, id: :snowfall_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :temp %>
+    <%= form.number_field :temp, id: :snowfall_temp %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

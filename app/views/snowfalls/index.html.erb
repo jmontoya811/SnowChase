@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Snowfalls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Location</th>
+      <th>Amount</th>
+      <th>Temp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @snowfalls.each do |snowfall| %>
+      <tr>
+        <td><%= snowfall.title %></td>
+        <td><%= snowfall.location %></td>
+        <td><%= snowfall.amount %></td>
+        <td><%= snowfall.temp %></td>
+        <td><%= link_to 'Show', snowfall %></td>
+        <td><%= link_to 'Edit', edit_snowfall_path(snowfall) %></td>
+        <td><%= link_to 'Destroy', snowfall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Snowfall', new_snowfall_path %>

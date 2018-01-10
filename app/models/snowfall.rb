@@ -1,0 +1,2 @@
+class Snowfall < ApplicationRecord
+end
